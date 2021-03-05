@@ -25,10 +25,7 @@ namespace CompiPascal
 
         private void btnTraducir_Click(object sender, EventArgs e)
         {
-            Sintactico1 analizador = new Sintactico1();
-            analizador.analizar(txtEntrada.Text);
-            txtSalida.Text = "No dio problema";
-            /*bool resultado =  analizador.analizar(txtEntrada.Text);
+            bool resultado = Sintactico.analizar(txtEntrada.Text);
 
             if (resultado)
             {
@@ -36,7 +33,7 @@ namespace CompiPascal
             }
             else {
                 txtSalida.Text = "La cadena es incorrecta";
-            }*/
+            }
         }
     }
 }

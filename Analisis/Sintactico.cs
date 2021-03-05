@@ -8,7 +8,7 @@ namespace CompiPascal.Analisis
 {
     class Sintactico: Grammar
     {
-        public bool analizar(String cadena) {
+        public static bool analizar(String cadena) {
             Gramatica gramatica = new Gramatica();
             LanguageData lenguaje = new LanguageData(gramatica);
             Parser parser = new Parser(lenguaje);

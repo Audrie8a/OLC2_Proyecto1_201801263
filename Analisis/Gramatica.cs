@@ -19,6 +19,7 @@ namespace CompiPascal.Analisis
             CommentTerminal COMENTARIOMULTILINEA1 = new CommentTerminal("COMENTARIOMULTILINEA1", "(*", "*)");
             CommentTerminal COMENTARIOMULTILINEA2 = new CommentTerminal("COMENTARIOMULTILINEA2", "{", "}");
             var TAB = new RegexBasedTerminal("TAB", "\t|\n\t");
+            var EPSILON = new RegexBasedTerminal("\t|\n| ");
             #endregion
 
             #region Terminales
@@ -237,6 +238,9 @@ namespace CompiPascal.Analisis
             type.Rule = objects + vars + END + PTCOMA
                     | arrays;
 
+            vars.Rule = tvar
+                        | Empty;
+
             objects.Rule = ID + IGUAL + OBJECT;
 
             arrays.Rule = arrays + array
@@ -250,7 +254,7 @@ namespace CompiPascal.Analisis
 
             valor.Rule = exp
                         | CADENA
-                        | BOOLEAN
+                        | booleano
                         | DECIMAL;
 
             asignacionvar.Rule = ID + DOSPTSIGUAL + valor + PTCOMA;
@@ -259,7 +263,9 @@ namespace CompiPascal.Analisis
                             | COMENTARIOMULTILINEA1
                             | COMENTARIOMULTILINEA2;
 
-            ejecucion.Rule = instrucciones + instruccion
+            ejecucion.Rule = BEGIN + instrucciones + END;
+
+            instrucciones.Rule = instrucciones + instruccion
                             | instruccion;
 
             instruccion.Rule = asignacionvar
@@ -270,6 +276,12 @@ namespace CompiPascal.Analisis
                             | graficar
                             | asignacionarreglo
                             | Empty;
+
+            estructurascontrol.Rule = if_then
+                                    | while_do
+                                    | tcase
+                                    | repeatuntil
+                                    | for_do;
 
             llamarfuncproc.Rule = ID + PARENTESISA + valores + PARENTESISC;
 
