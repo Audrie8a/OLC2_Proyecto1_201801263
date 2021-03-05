@@ -29,24 +29,24 @@ namespace CompiPascal
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtEntrada = new System.Windows.Forms.RichTextBox();
             this.btnTraducir = new System.Windows.Forms.Button();
             this.btnEjecutar = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.txtSalida = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // txtEntrada
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 69);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(433, 317);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.txtEntrada.Location = new System.Drawing.Point(12, 69);
+            this.txtEntrada.Name = "txtEntrada";
+            this.txtEntrada.Size = new System.Drawing.Size(433, 317);
+            this.txtEntrada.TabIndex = 0;
+            this.txtEntrada.Text = "";
             // 
             // btnTraducir
             // 
@@ -56,6 +56,7 @@ namespace CompiPascal
             this.btnTraducir.TabIndex = 1;
             this.btnTraducir.Text = "Traducir";
             this.btnTraducir.UseVisualStyleBackColor = true;
+            this.btnTraducir.Click += new System.EventHandler(this.btnTraducir_Click);
             // 
             // btnEjecutar
             // 
@@ -75,27 +76,36 @@ namespace CompiPascal
             this.btnReportes.Text = "Reportes";
             this.btnReportes.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // txtSalida
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(462, 69);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(433, 317);
-            this.richTextBox2.TabIndex = 4;
-            this.richTextBox2.Text = "";
+            this.txtSalida.Location = new System.Drawing.Point(462, 69);
+            this.txtSalida.Name = "txtSalida";
+            this.txtSalida.Size = new System.Drawing.Size(433, 317);
+            this.txtSalida.TabIndex = 4;
+            this.txtSalida.Text = "";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.txtSalida);
             this.panel1.Controls.Add(this.btnReportes);
             this.panel1.Controls.Add(this.btnEjecutar);
             this.panel1.Controls.Add(this.btnTraducir);
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.txtEntrada);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(913, 533);
             this.panel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(626, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Consola Salida";
             // 
             // label1
             // 
@@ -106,15 +116,6 @@ namespace CompiPascal
             this.label1.TabIndex = 5;
             this.label1.Text = "Consola Entrada";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(626, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Consola Salida";
             // 
             // Form1
             // 
@@ -132,11 +133,11 @@ namespace CompiPascal
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtEntrada;
         private System.Windows.Forms.Button btnTraducir;
         private System.Windows.Forms.Button btnEjecutar;
         private System.Windows.Forms.Button btnReportes;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox txtSalida;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
